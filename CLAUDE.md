@@ -64,6 +64,12 @@ Plus these official Claude Code plugins, installed at project scope (`claude-plu
 
 Plus the **impeccable** design skill (installed via `npx impeccable install`, not from the marketplace — 23 commands like `/impeccable polish`, `/impeccable critique`, `/impeccable audit`, plus a PostToolUse hook that runs its detector after UI edits). **Run `/impeccable init` as the first step of the actual build phase** (not now — it starts defining product/design context, which crosses into build-phase territory) to set up `PRODUCT.md`/`DESIGN.md`.
 
+### Claude Design (separate product, feeds into Claude Code)
+
+**Claude Design** (claude.ai/design, launched April 2026, research preview) is a *separate* Anthropic product for rapid visual/UX prototyping as live, clickable HTML — not a Claude Code feature. Decided workflow (2026-07-02, see `docs/research/tooling-and-tech-stack.md` for the full comparison): use Claude Design **first**, for fast visual iteration on key screens, then hand off to Claude Code to build the real React Native/Expo implementation. Do not treat this as an either/or with Claude Code — they're sequential phases of the same build.
+- Starter brief ready to paste into a new Claude Design project: `docs/design/claude-design-starter-brief.md`.
+- Bridge tool: **DesignSync** (this session already has the tool, but it needs one-time interactive authorization — run `/design-login` yourself once; I can't run it non-interactively). Once authorized, `/design-sync` pulls a Claude Design project's design system into this repo, or Claude Design's own "Send to Claude Code Web / local coding agent" button pushes a handoff bundle here directly.
+
 When a needed MCP server/plugin genuinely can't be installed, say so explicitly — but don't assume something is blocked just because an earlier session (possibly in a different, more restricted environment) said so. See `docs/memory/environment-constraints.md`.
 
 Use existing Claude Code skills at the right moments: `run`/`verify` before claiming any feature works, `security-review` before anything touching user data or dependencies, `code-review`/`simplify` on non-trivial diffs, `frontend-design`/`impeccable` for every UI surface.

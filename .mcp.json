@@ -1,14 +1,5 @@
 {
   "mcpServers": {
-    "context7": {
-      "type": "stdio",
-      "command": "npx",
-      "args": [
-        "-y",
-        "@upstash/context7-mcp"
-      ],
-      "env": {}
-    },
     "sequential-thinking": {
       "type": "stdio",
       "command": "npx",
@@ -26,15 +17,6 @@
         "mcp",
         "--project",
         "best-azkar-app"
-      ],
-      "env": {}
-    },
-    "playwright": {
-      "type": "stdio",
-      "command": "npx",
-      "args": [
-        "-y",
-        "@playwright/mcp@latest"
       ],
       "env": {}
     }
